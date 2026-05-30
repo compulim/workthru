@@ -1,1 +1,1 @@
-console.log('Hello, World!');
+export { default as workthru } from './workthru.ts';
