@@ -48,7 +48,11 @@
     "workthru": "0.0.0-0"
   },
   "devDependencies": {
-    "workthru": "0.0.0-0"
+    "@tsconfig/strictest": "^2.0.8",
+    "expect": "^30.4.1",
+    "resolve-cwd": "^3.0.0",
+    "typescript": "^6.0.3",
+    "workthru": "^0.0.0-0"
   },
   "files": [
     "**/*.cjs",
@@ -56,7 +60,8 @@
     "**/*.mjs",
     "webDriver/**/*"
   ],
-  "dependencies": {},
   "exports": {},
-  "peerDependencies": {}
+  "dependencies": {
+    "@compulim/test-harness": "^0.0.0-0"
+  }
 }

@@ -75,10 +75,20 @@
       "18"
     ]
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.13",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^25.9.1",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3"
+  },
   "localPeerDependencies": {
     "@compulim/test-harness": "0.0.0-0"
   },
-  "dependencies": {},
-  "peerDependencies": {}
+  "dependencies": {
+    "@compulim/test-harness": "^0.0.0-0",
+    "escape-string-regexp": "^5.0.0",
+    "expect": "^30.4.1",
+    "publint": "^0.3.21"
+  }
 }

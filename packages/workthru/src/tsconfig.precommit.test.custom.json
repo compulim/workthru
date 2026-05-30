@@ -2,5 +2,5 @@
   "compilerOptions": {
     "ignoreDeprecations": "6.0"
   },
-  "extends": "@tsconfig/strictest/tsconfig.json"
+  "extends": "@tsconfig/recommended/tsconfig.json"
 }
