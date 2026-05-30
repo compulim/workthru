@@ -1,8 +1,8 @@
 import { scenario } from '@testduet/given-when-then';
 import { expect } from 'expect';
+import { fn } from 'jest-mock';
 import * as NodeTest from 'node:test';
 import workthru from '../workthru.ts';
-import { fn } from 'jest-mock';
 
 scenario(
   'workthru',
