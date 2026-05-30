@@ -1,22 +1,17 @@
 /**
- * Transforms an input by recursively walking it, which could be array, class object, plain object, function, null, primitives, undefined, etc.
+ * Internal recursive helper for {@link workthru}.
  *
- * Input could be recursive, sparse array, and potentially not serializable to JSON.
+ * For arrays and plain objects, calls transformer first. If transformer returns the same reference,
+ * recursively walks children and rebuilds the container only when a child changes (structural sharing).
+ * Class instances, primitives, functions, and null are passed directly to transformer without recursion.
  *
- * Skip values that has been walked and return the transformed value.
+ * The `walked` map tracks already-visited nodes to handle circular references and avoid duplicate work.
  *
- * Call transformer() on every traversed value. The transformer can return the original value or a new value.
- * If a new value is returned, replace the output with the new value. Otherwise, continue the walk recursively.
- *
- * If the value is an array or object, recursively walk on its value and call transformer() on every item.
- *
- * If part of the input is not modified, return their original values.
- *
- * If the whole input is not modified, return the original input.
- *
- * @param input
- * @param transformer
+ * @param target - Value to transform.
+ * @param transformer - Called on every visited value; return the original value to recurse into children.
+ * @param walked - Cycle-detection map from original value to its transformed counterpart.
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function workthru_(target: any, transformer: (value: any) => any, walked: Map<any, any>): any {
   if (Array.isArray(target)) {
     if (walked.has(target)) {
@@ -96,8 +91,32 @@ function workthru_(target: any, transformer: (value: any) => any, walked: Map<an
   return transformer(target);
 }
 
-function workthru(target: any, walker: (value: any) => any): any {
-  return workthru_(target, walker, new Map());
+/**
+ * Recursively walks the input in a depth-first search manner and transforms value as needed.
+ *
+ * Every traversed value will be passed to the `transformer` function.
+ *
+ * - If the `transformer` return the original value, the traversal for this branch will be continued
+ * - If the `transformer` return a new value, the traversal for this branch will be ended
+ *
+ * The following data types are supported:
+ *
+ * - boolean, number, string
+ * - array will be transformed on itself and every of the element
+ * - plain object will be transformed on itself and every of its member value
+ *
+ * Notes:
+ *
+ * - Values with unsupported will be kept as-is;
+ * - Values that are not transformed will be kept as-is
+ *
+ * @param target - The value to be worked through
+ * @param transformer - The function to transform the value
+ * @returns - The transformed value if the input has been transformed, otherwise, return the original value
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function workthru(target: any, transformer: (value: any) => any): any {
+  return workthru_(target, transformer, new Map());
 }
 
 export default workthru;
