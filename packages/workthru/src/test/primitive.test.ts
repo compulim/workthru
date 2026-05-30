@@ -2,9 +2,11 @@ import { scenario } from '@testduet/given-when-then';
 import { expect } from 'expect';
 import * as NodeTest from 'node:test';
 import workthru from '../workthru.ts';
+import { relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 scenario(
-  'workthru',
+  relative(process.cwd(), fileURLToPath(import.meta.url)),
   bdd => {
     bdd
       .given('a string', () => 'Hello, World!')

@@ -1,11 +1,13 @@
 import { scenario } from '@testduet/given-when-then';
 import { expect } from 'expect';
 import { fn } from 'jest-mock';
+import { relative } from 'node:path';
 import * as NodeTest from 'node:test';
+import { fileURLToPath } from 'node:url';
 import workthru from '../workthru.ts';
 
 scenario(
-  'workthru',
+  relative(process.cwd(), fileURLToPath(import.meta.url)),
   bdd => {
     bdd
       .given('an object', () => ({ value: { one: 1, two: 2, three: 3 } }))
