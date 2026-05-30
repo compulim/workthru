@@ -7,7 +7,13 @@ Recursively walks the input in a depth-first search manner and transforms value 
 ```ts
 import { workthru } from 'workthru';
 
-const result = workthru({ first: [1, 2], second: 3 }, value => (typeof value === 'number' ? value * 2 : value));
+const result = workthru(
+  {
+    first: [1, 2],
+    second: 3
+  },
+  value => (typeof value === 'number' ? value * 2 : value)
+);
 
 // Transformer will be called 5 times:
 
