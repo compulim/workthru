@@ -9,8 +9,11 @@ scenario(
   bdd => {
     bdd
       .given('an recursive object', () => {
+        // eslint-disable-next-line prefer-const
         let one: { one: unknown } = { one: 1 };
+        // eslint-disable-next-line prefer-const
         let two: { two: unknown } = { two: 2 };
+        // eslint-disable-next-line prefer-const
         let three: { three: unknown } = { three: 3 };
 
         one.one = two;
@@ -49,8 +52,11 @@ scenario(
 
     bdd
       .given('an recursive object', () => {
+        // eslint-disable-next-line prefer-const
         let one: { one: unknown } = { one: 1 };
+        // eslint-disable-next-line prefer-const
         let two: { two: unknown } = { two: 2 };
+        // eslint-disable-next-line prefer-const
         let three: { three: unknown } = { three: 3 };
 
         one.one = two;
@@ -83,8 +89,11 @@ scenario(
 
     bdd
       .given('an recursive array', () => {
+        // eslint-disable-next-line prefer-const
         let one: unknown[] = [1];
+        // eslint-disable-next-line prefer-const
         let two: unknown[] = [2];
+        // eslint-disable-next-line prefer-const
         let three: unknown[] = [3];
 
         one[0] = two;
@@ -122,8 +131,11 @@ scenario(
 
     bdd
       .given('an recursive array', () => {
+        // eslint-disable-next-line prefer-const
         let one: unknown[] = [1];
+        // eslint-disable-next-line prefer-const
         let two: unknown[] = [2];
+        // eslint-disable-next-line prefer-const
         let three: unknown[] = [3];
 
         one[0] = two;

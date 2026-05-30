@@ -56,7 +56,8 @@ scenario(
       .when('workthru() is called to transform the object', ({ transformer, value }) => workthru(value, transformer))
       .then('should return the transformed object', (_, value) => {
         expect(value).toEqual('Hello, World!');
-      }).and('should have called the transformer once', ({ transformer }) => {
+      })
+      .and('should have called the transformer once', ({ transformer }) => {
         expect(transformer).toHaveBeenCalledTimes(1);
       });
   },
