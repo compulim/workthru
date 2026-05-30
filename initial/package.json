@@ -1,5 +1,5 @@
 {
-  "name": "@compulim/$package-name-root",
+  "name": "@compulim/workthru-root",
   "version": "0.1.0-0",
   "private": true,
   "scripts": {
@@ -20,7 +20,7 @@
     "test": "npm run test --if-present --workspaces"
   },
   "workspaces": [
-    "packages/$package-local-name",
+    "packages/workthru",
     "packages/pages",
     "packages/integration-test"
   ]
