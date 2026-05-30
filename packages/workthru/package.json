@@ -50,30 +50,6 @@
     "test:unit": "node --experimental-strip-types --experimental-test-coverage --experimental-test-isolation=none --test"
   },
   "pinDependencies": {
-    "@testing-library/react": [
-      "15"
-    ],
-    "@types/react": [
-      "18"
-    ],
-    "@types/react-dom": [
-      "18"
-    ],
-    "@types/react-test-renderer": [
-      "18"
-    ],
-    "escape-string-regexp": [
-      "4"
-    ],
-    "react": [
-      "18"
-    ],
-    "react-dom": [
-      "18"
-    ],
-    "react-test-renderer": [
-      "18"
-    ]
   },
   "devDependencies": {
     "@compulim/test-harness": "^0.0.0-0",
