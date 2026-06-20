@@ -18,6 +18,7 @@ async function workthruAsync_(
   transformer: (value: any) => Promise<any>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   walked: Map<any, any>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ): Promise<any> {
   if (Array.isArray(target)) {
     if (walked.has(target)) {
