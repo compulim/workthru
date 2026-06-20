@@ -13,6 +13,16 @@
   "license": "MIT",
   "author": "",
   "exports": {
+    "./async": {
+      "import": {
+        "types": "./dist/workthru.async.d.mts",
+        "default": "./dist/workthru.async.mjs"
+      },
+      "require": {
+        "types": "./dist/workthru.async.d.ts",
+        "default": "./dist/workthru.async.js"
+      }
+    },
     ".": {
       "import": {
         "types": "./dist/workthru.d.mts",
@@ -49,8 +59,7 @@
     "test:types": "node --experimental-strip-types --import @compulim/test-harness/test-types.import --test **/*.test-types.ts",
     "test:unit": "node --experimental-strip-types --experimental-test-coverage --experimental-test-isolation=none --test"
   },
-  "pinDependencies": {
-  },
+  "pinDependencies": {},
   "devDependencies": {
     "@compulim/test-harness": "^0.0.0-0",
     "@testduet/given-when-then": "^0.1.0",
