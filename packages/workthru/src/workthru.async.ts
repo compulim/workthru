@@ -11,10 +11,12 @@
  * @param transformer - Called on every visited value; return the original value to recurse into children.
  * @param walked - Cycle-detection map from original value to its transformed counterpart.
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function workthruAsync_(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   target: any,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   transformer: (value: any) => Promise<any>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   walked: Map<any, any>
 ): Promise<any> {
   if (Array.isArray(target)) {
@@ -98,7 +100,7 @@ async function workthruAsync_(
 /**
  * Recursively walks the input in a depth-first search manner and transforms value as needed.
  *
- * Every traversed value will be passed to the `transformer` function.
+ * Every traversed value will be passed to the asynchronous `transformer` function.
  *
  * - If the `transformer` return the original value, the traversal for this branch will be continued
  * - If the `transformer` return a new value, the traversal for this branch will be ended
@@ -115,8 +117,8 @@ async function workthruAsync_(
  * - Values that are not transformed will be kept as-is
  *
  * @param target - The value to be worked through
- * @param transformer - The function to transform the value
- * @returns - The transformed value if the input has been transformed, otherwise, return the original value
+ * @param transformer - The asynchronous function to transform the value
+ * @returns - The promise of transformed value if the input has been transformed, otherwise, return the original value
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function workthruAsync(target: any, transformer: (value: any) => Promise<any>): Promise<any> {
