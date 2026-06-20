@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `workflow/async` entry point for asynchronous transformation, by [@compulim](https://github/compulim), in PR [#8](https://github.com/compulim/workthru/pull/8)
+
 ## [0.1.0] - 2026-05-30
 
 ### Added
