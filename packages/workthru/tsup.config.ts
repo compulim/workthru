@@ -4,7 +4,8 @@ import overrideConfig from './tsup.config.override.ts';
 const baseConfig: Options = {
   dts: true,
   entry: {
-    'workthru': './src/index.ts'
+    workthru: './src/index.ts',
+    'workthru.async': './src/index.async.ts'
   },
   sourcemap: true
 };
