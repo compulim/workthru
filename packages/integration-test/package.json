@@ -48,7 +48,7 @@
     "workthru": "0.0.0-0"
   },
   "devDependencies": {
-    "@happy-dom/global-registrator": "^20.9.0",
+    "@happy-dom/global-registrator": "^21.0.4",
     "@tsconfig/strictest": "^2.0.8",
     "expect": "^30.4.1",
     "jest-mock": "^30.4.1",
